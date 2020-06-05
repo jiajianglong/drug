@@ -48,7 +48,7 @@ public class StoreController {
 			map.put("querystring", qd);
 			return "store/querystore";
 	}
-	@RequestMapping("/querystore2")   //Õâ¸ö·½·¨»¹ĞèÒªÓÅ»¯£¬ºÄĞÔÄÜ£¬Ç°¶Ë¿ÉÒÔÊ¹ÓÃJSONÀ´Æ½ºâĞÔÄÜ
+	@RequestMapping("/querystore2")
 	public String to_querystore2(@RequestParam(value="pn",defaultValue="1")Integer pn,
 			@RequestParam(value="querystore")String qd,
 			Map<String,Object> map){
@@ -82,14 +82,14 @@ public class StoreController {
 			if(result.hasErrors()){
 				map.put("queryresult",SS.QueryStoreService(pn,nowqd));
 				map.put("querystring", nowqd);
-				map.put("msg", "ĞŞ¸ÄÊ§°Ü:Ê±¼ä¸ñÊ½ÓĞÎó,Éú²úÈÕÆÚĞèÒªÊÇ¹ıÈ¥µÄÊ±¼ä,ÓĞĞ§ÆÚĞèÒªÊÇ½«À´µÄÊ±¼ä");	
+				map.put("msg", "ä¿®æ”¹å¤±è´¥:æ—¶é—´æ ¼å¼æœ‰è¯¯,ç”Ÿäº§æ—¥æœŸéœ€è¦æ˜¯è¿‡å»çš„æ—¶é—´,æœ‰æ•ˆæœŸéœ€è¦æ˜¯å°†æ¥çš„æ—¶é—´");
 				return "store/querystore";
 			/*	List<FieldError> err = result.getFieldErrors();
 				if(err.size()==1){
-					map.put("msg", "ĞŞ¸ÄÊ§°Ü:"+err.get(0).getField()+err.get(0).getDefaultMessage());
+					map.put("msg", "ï¿½Ş¸ï¿½Ê§ï¿½ï¿½:"+err.get(0).getField()+err.get(0).getDefaultMessage());
 					return "store/querystore";
 				}else{
-					map.put("msg", "ĞŞ¸ÄÊ§°Ü:"+err.get(0).getField()+err.get(0).getDefaultMessage()+
+					map.put("msg", "ï¿½Ş¸ï¿½Ê§ï¿½ï¿½:"+err.get(0).getField()+err.get(0).getDefaultMessage()+
 							","+err.get(1).getField()+err.get(1).getDefaultMessage());   
 					return "store/querystore";
 				}    */
@@ -97,7 +97,7 @@ public class StoreController {
 				SS.UpdateStoreService(reqstore);
 				map.put("queryresult",SS.QueryStoreService(pn,nowqd));
 				map.put("querystring", nowqd);
-				map.put("msg", "ĞŞ¸Ä³É¹¦£¡");
+				map.put("msg", "ä¿®æ”¹æˆåŠŸï¼");
 				return "store/querystore";
 			}
 	}
@@ -107,13 +107,13 @@ public class StoreController {
 			if(result.hasErrors()){
 				map.put("queryresult",SS.QueryStoreService(pn,nowqd));
 				map.put("querystring", nowqd);
-				map.put("msg", "ĞŞ¸ÄÊ§°Ü:Ê±¼ä¸ñÊ½ÓĞÎó,Éú²úÈÕÆÚĞèÒªÊÇ¹ıÈ¥µÄÊ±¼ä,ÓĞĞ§ÆÚĞèÒªÊÇ½«À´µÄÊ±¼ä");	
+				map.put("msg", "ä¿®æ”¹å¤±è´¥:æ—¶é—´æ ¼å¼æœ‰è¯¯,ç”Ÿäº§æ—¥æœŸéœ€è¦æ˜¯è¿‡å»çš„æ—¶é—´,æœ‰æ•ˆæœŸéœ€è¦æ˜¯å°†æ¥çš„æ—¶é—´");
 				return "store/storeinfo";
 			}else{
 				SS.UpdateStoreService(reqstore);
 				map.put("queryresult",SS.QueryStoreService(pn,nowqd));
 				map.put("querystring", nowqd);
-				map.put("msg", "ĞŞ¸Ä³É¹¦£¡");
+				map.put("msg", "ä¿®æ”¹æˆåŠŸï¼");
 				return "store/storeinfo";
 			}
 	}
@@ -137,7 +137,7 @@ public class StoreController {
     /*
     <td>
 	<a class="btn btn-info btn-sm" href="<%=basePath%>toaddstore?drugname=${ds.drugname }&changshang=${ds.changshang }&beizhu=${ds.beizhu }&location=${ds.location }&unit=${ds.unit }&guige=${ds.guige }&tiaoxingma=${ds.tiaoxingma }" role="button">
-		<span class="glyphicon glyphicon-hand-up" aria-hidden="true"></span>Ñ¡ÔñÌí¼Ó´ËÒ©Æ·
+		<span class="glyphicon glyphicon-hand-up" aria-hidden="true"></span>é€‰æ‹©æ·»åŠ æ­¤è¯å“
 	</a>
 </td>*/
     @RequestMapping(value="/toaddstore",method=RequestMethod.POST)  
@@ -150,15 +150,15 @@ public class StoreController {
    	public String to_addtostore(Map<String,Object> map,@Valid Store store,BindingResult result){
    			if(result.hasErrors()){
    				Drug dd = new Drug(store.getDrugname(), store.getChangshang(), store.getBeizhu(), store.getLocation(), store.getUnit(), store.getGuige(), store.getTiaoxingma());
-   				map.put("msg", "ĞŞ¸ÄÊ§°Ü:Ê±¼ä¸ñÊ½ÓĞÎó,Éú²úÈÕÆÚĞèÒªÊÇ¹ıÈ¥µÄÊ±¼ä,ÓĞĞ§ÆÚĞèÒªÊÇ½«À´µÄÊ±¼ä");	
+   				map.put("msg", "ä¿®æ”¹å¤±è´¥:æ—¶é—´æ ¼å¼æœ‰è¯¯,ç”Ÿäº§æ—¥æœŸéœ€è¦æ˜¯è¿‡å»çš„æ—¶é—´,æœ‰æ•ˆæœŸéœ€è¦æ˜¯å°†æ¥çš„æ—¶é—´");
    				map.put("drugstoreinfo", dd);
    				return "store/addstoreinfo";
    			}else{
    				if(SS.AddStoreService(store)){
-   					map.put("msg","ÒÑÓĞÍ¬ÅúºÅÒ©Æ·£¬Ìí¼Ó³É¹¦");
+   					map.put("msg","å·²æœ‰åŒæ‰¹å·è¯å“ï¼Œæ·»åŠ æˆåŠŸ");
    					return "store/addstore";
    				}else{
-   					map.put("msg","Ìí¼Ó³É¹¦");
+   					map.put("msg","æ·»åŠ æˆåŠŸ");
    					return "store/addstore";
    				}
    			}

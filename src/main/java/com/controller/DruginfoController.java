@@ -49,14 +49,14 @@ public class DruginfoController {
 			return "main";
 	}
 	//querydrug
-	@RequestMapping("/querydrug")   //Õâ¸ö·½·¨»¹ĞèÒªÓÅ»¯£¬ºÄĞÔÄÜ£¬Ç°¶Ë¿ÉÒÔÊ¹ÓÃJSONÀ´Æ½ºâĞÔÄÜ
+	@RequestMapping("/querydrug")
 	public String to_querydrug(@RequestParam(value="pn",defaultValue="1")Integer pn,
 			@RequestParam(value="querydrug")String qd,Map<String,Object> map){
 			map.put("queryresult",DS.QueryDrugService(pn,qd));
 			map.put("querystring", qd);
 			return "druginfo/querydrug";
 	}
-	@RequestMapping("/querydrug2")   //Õâ¸ö·½·¨»¹ĞèÒªÓÅ»¯£¬ºÄĞÔÄÜ£¬Ç°¶Ë¿ÉÒÔÊ¹ÓÃJSONÀ´Æ½ºâĞÔÄÜ
+	@RequestMapping("/querydrug2")
 	public String to_querydrug2(@RequestParam(value="pn",defaultValue="1")Integer pn,
 			@RequestParam(value="querydrug")String qd,
 			Map<String,Object> map){
@@ -65,7 +65,7 @@ public class DruginfoController {
 			return "druginfo/druginfo";
 	}
 	/**
-	 *  Ò©Æ·»ù´¡ĞÅÏ¢ĞŞ¸Ä
+	 *
 	 * @param hs
 	 * @param pn
 	 * @param nowqd
@@ -81,28 +81,28 @@ public class DruginfoController {
 			if(DS.UpdateDrugService(olddn,oldcs,reqdrug)){
 				map.put("queryresult",DS.QueryDrugService(pn,nowqd));
 				map.put("querystring", nowqd);
-				map.put("msg", "ĞŞ¸Ä³É¹¦£¡");
+				map.put("msg", "ä¿®æ”¹æˆåŠŸï¼");
 				return "druginfo/querydrug";
 			}else{
 				map.put("queryresult",DS.QueryDrugService(pn,nowqd));
 				map.put("querystring", nowqd);
-				map.put("msg", "ĞŞ¸ÄÊ§°Ü,ÒªĞŞ¸ÄµÄÃû³Æ²»¿ÉÓÃ,Êı¾İ¿âÖĞÒÑ´æÔÚÍ¬ÃûÒ©Æ·!");
+				map.put("msg", "ä¿®æ”¹å¤±è´¥,è¦ä¿®æ”¹çš„åç§°ä¸å¯ç”¨,æ•°æ®åº“ä¸­å·²å­˜åœ¨åŒåè¯å“!");
 				return "druginfo/querydrug";
 			}
 	}
-	//Õâ¸ö¿ÉÒÔÓÅ»¯Ò»ÏÂ£¬ºÍÉÏÃæÄÇ¸ö·½·¨Ğ´³ÉÒ»¸ö
+
 	@RequestMapping(value="/updatedrug2",method=RequestMethod.POST)
 	public String to_update2(@RequestParam(value="nowpage",defaultValue="1")Integer pn,
 			String nowqd,String olddn,String oldcs,@Valid Drug reqdrug,Map<String,Object> map){
 			if(DS.UpdateDrugService(olddn,oldcs,reqdrug)){
 				map.put("queryresult",DS.QueryDrugService(pn,nowqd));
 				map.put("querystring", nowqd);
-				map.put("msg", "ĞŞ¸Ä³É¹¦£¡");
+				map.put("msg", "ä¿®æ”¹æˆåŠŸï¼");
 				return "druginfo/druginfo";
 			}else{
 				map.put("queryresult",DS.QueryDrugService(pn,nowqd));
 				map.put("querystring", nowqd);
-				map.put("msg", "ĞŞ¸ÄÊ§°Ü,ÒªĞŞ¸ÄµÄÃû³Æ²»¿ÉÓÃ,Êı¾İ¿âÖĞÒÑ´æÔÚÍ¬ÃûÒ©Æ·!");
+				map.put("msg", "ä¿®æ”¹å¤±è´¥,è¦ä¿®æ”¹çš„åç§°ä¸å¯ç”¨,æ•°æ®åº“ä¸­å·²å­˜åœ¨åŒåè¯å“!");
 				return "druginfo/druginfo";
 			}
 	}
@@ -120,10 +120,10 @@ public class DruginfoController {
 	@RequestMapping(value="/adddrugval",method=RequestMethod.POST)
 	public String to_adddrugval(@Valid Drug adddrug,Map<String,Object> map){
 			if(DS.AddService(adddrug)){
-				map.put("msg", "Ìí¼Ó³É¹¦");
+				map.put("msg", "æ·»åŠ æˆåŠŸï¼");
 				return "druginfo/adddrug";
 			}else{
-				map.put("msg", "Ìí¼ÓÊ§°Ü,ÒªÌí¼ÓµÄÃû³Æ²»¿ÉÓÃ,Êı¾İ¿âÖĞÒÑ´æÔÚÍ¬ÃûÒ©Æ·,ÇëÉÔÎ¢ĞŞ¸ÄÒ»ÏÂÖØÊÔ");
+				map.put("msg", "æ·»åŠ å¤±è´¥,è¦æ·»åŠ çš„åç§°ä¸å¯ç”¨,æ•°æ®åº“ä¸­å·²å­˜åœ¨åŒåè¯å“,è¯·ç¨å¾®ä¿®æ”¹ä¸€ä¸‹é‡è¯•");
 				map.put("olddrug", adddrug);
 				return "druginfo/adddrug";
 			}

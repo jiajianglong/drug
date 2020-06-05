@@ -10,9 +10,6 @@ import com.bean.Manager;
 
 public class LoginInterceptor implements HandlerInterceptor{
 
-	/**
-	 * µÇÂ¼À¹½ØÆ÷
-	 */
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {

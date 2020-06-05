@@ -31,7 +31,7 @@ public class LoginController {
 	public String logincheck(@RequestParam(value="username",required=true)String username,
 			@RequestParam(value="password")String password,HttpSession hs,Map<String,Object> map){
 			if(username.equals("")&&password.equals("")){
-					map.put("logininfouser", "用户名或密码不能为空");
+					map.put("logininfouser", "鐢ㄦ埛鍚嶆垨瀵嗙爜涓嶈兘涓虹┖");
 					return "../../index";
 			}else{
 				List<Manager> ck = checkuser.QueryUserService(username);
@@ -53,11 +53,11 @@ public class LoginController {
 				}
 				}
 				if(N<111111){
-					map.put("logininfouser", "该用户尚未注册，登录失败");
+					map.put("logininfouser", "璇ョ敤鎴峰皻鏈敞鍐岋紝鐧诲綍澶辫触");
 					return "../../index";
                 }
 				if(P<111111){
-        		    map.put("logininfopass", "用户密码不正确，登录失败");
+        		    map.put("logininfopass", "鐢ㄦ埛瀵嗙爜涓嶆纭紝鐧诲綍澶辫触");
 					return "../../index";
                 }
 				return "../../index";
@@ -65,7 +65,7 @@ public class LoginController {
 		
 	}
 	
-	@RequestMapping("/date")  //date 效期提示
+	@RequestMapping("/date")  //date
 	public String to_date(Map<String,Object> map){
 			map.put("datetips", SS.CheckStoreService());
 			return "date/date";
@@ -80,7 +80,7 @@ public class LoginController {
 			SellS.DelSelloverService(drugname,changshang,pihao);
 			return "redirect:/sellover";
 	}
-	@RequestMapping("/storetip")  //storetip 库存预警
+	@RequestMapping("/storetip")  //storetip
 	public String to_storetip(@RequestParam(value="c",required=false,defaultValue="1")String c,Map<String,Object> map){
 		int a = 0;
 		try {
@@ -91,17 +91,17 @@ public class LoginController {
 			map.put("yj", SS.YJService(a));
 			return "storetip/storetip";
 	}
-	@RequestMapping(value="/tips")  //tips销售记录
+	@RequestMapping(value="/tips")  //tips
 	public String to_tips(Map<String,Object> map){
 			map.put("alltips", SellS.GetRecordsService(""));
 			return "tips/tips";
 	}
-	@RequestMapping(value="/gettips",method=RequestMethod.POST)  //tips销售记录
+	@RequestMapping(value="/gettips",method=RequestMethod.POST)  //tips锟斤拷锟桔硷拷录
 	public String to_gettips(String selltime,Map<String,Object> map){
 			map.put("alltips", SellS.GetRecordsService(selltime));
 			return "tips/tips";
 	}
-	@RequestMapping(value="/deltips",method=RequestMethod.POST)  //deltips销售记录
+	@RequestMapping(value="/deltips",method=RequestMethod.POST)  //deltips锟斤拷锟桔硷拷录
 	public String to_deltips(String drugname,String changshang,String pihao,String selltime){
 			SellS.DelRecordsService(drugname, changshang, pihao, selltime);
 			return "redirect:/tips";

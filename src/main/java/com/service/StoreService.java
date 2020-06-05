@@ -61,7 +61,7 @@ public class StoreService {
 		
 	}
 	/**
-	 * Ìí¼Ó¿â´æ,¸ù¾Ý¿â´æÖÐÊÇ·ñÓÐÍ¬ÅúºÅÒ©Æ··µ»Øtrue»òfalse,ÓÐÍ¬ÅúºÅ·µ»Øtrue
+	 *
 	 * @param s
 	 * @return
 	 */
@@ -76,11 +76,7 @@ public class StoreService {
 			return true;
 		}
 	}
-	/**
-	 * Ð§ÆÚÌáÊ¾
-	 * @return
-	 *Èç¹ûÃ»ÓÐ¼ÇÂ¼·µ»ØÖµÖ»ÓÐÒ»¸ö¼ÇÂ¼£¬²¢ÇÒflag="notip"
-	 */
+
 	public synchronized List<Datetips> CheckStoreService() {
 		List<Store> allstore = store.GetAllStore();
 		ArrayList<Datetips> re = new ArrayList<Datetips>();
@@ -89,7 +85,7 @@ public class StoreService {
 			return re;
 		}else{
 			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
-            String nowdate=sdf.format(new Date());//»ñÈ¡ÏµÍ³µ±Ç°Ê±¼ä
+            String nowdate=sdf.format(new Date());
 			for (Store s : allstore) {
 			try{
 				int flag = StringPro.daysBetween(nowdate,s.getDate());
@@ -97,10 +93,10 @@ public class StoreService {
 					String tip = "";
 					String f = "";
                 	if(flag<=0){
-                		tip="ÒÑ¹ýÆÚ";
+                		tip="å·²è¿‡æœŸ";
                 		f = "r";
                 	}else{
-                		tip="»¹ÓÐ"+flag+"Ìì¹ýÆÚ";
+                		tip="è¿˜æœ‰"+flag+"å¤©è¿‡æœŸ";
                 		f = "y";
                 	}
                 	Datetips nn = new Datetips(s.getDrugname(), s.getChangshang(), s.getBeginprice(), s.getPrice(), s.getDate(), s.getPihao(), s.getBeizhu(), s.getLocation(), s.getCount(), s.getUnit(), s.getGuige(), tip, f);

@@ -6,17 +6,17 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class StringPro {
-	public static String add(String str1,String str2){//加法
+	public static String add(String str1,String str2){
 		BigDecimal b1=new BigDecimal(str1);
 		BigDecimal b2=new BigDecimal(str2);
 		return b1.add(b2).toString();
 	}
-	public static String sub(String str1,String str2){//减法
+	public static String sub(String str1,String str2){
 		BigDecimal b1=new BigDecimal(str1);
 		BigDecimal b2=new BigDecimal(str2);
 		return b1.subtract(b2).toString();
 	}
-	public static String mul(String str1,String str2){//乘法
+	public static String mul(String str1,String str2){
 		BigDecimal b1=new BigDecimal(str1);
 		BigDecimal b2=new BigDecimal(str2);
 		return b1.multiply(b2).toString();

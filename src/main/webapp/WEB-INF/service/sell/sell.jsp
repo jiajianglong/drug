@@ -17,7 +17,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="static-res/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 	<link href="static-res/bootstrap-3.3.7-dist/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
 	<script src="static-res/bootstrap-3.3.7-dist/datetimepicker/bootstrap-datetimepicker.min.js"></script>
-	<script src="static-res/bootstrap-3.3.7-dist/datetimepicker/bootstrap-datetimepicker.zh-CN.js"></script>
   </head>
   
   <body>
@@ -239,6 +238,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				$("#inputam").val($(this).parents("tr").children("td").eq(9).text());
 				$("#ff").submit();
 			});
+			$.fn.datetimepicker.dates['zh-CN'] = {
+				days: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"],
+				daysShort: ["周日", "周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+				daysMin:  ["日", "一", "二", "三", "四", "五", "六", "日"],
+				months: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+				monthsShort: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+				today: "今天",
+				suffix: [],
+				meridiem: ["上午", "下午"]
+			};
 			$(".picker").datetimepicker({
 				format : 'yyyy-mm-dd',
 				language : 'zh-CN',

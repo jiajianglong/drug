@@ -35,32 +35,22 @@ public class JinhuoService {
 		
 		@Autowired
 		DrugMapper drug;
-		/**
-		 * 添加供货商，如果数据库有同样的记录，返回Msg.fail，如果没有就添加，并且返回Msg.success
-		 * @param it(传进来的值)
-		 * @return
-		 */
+
 		public Msg AddGhsService(String it){
 			if(ghs.QueryGHS(it).isEmpty()){
 				ghs.AddGHS(it);
 				Msg re = Msg.success().add("success","success");
 				return re;
 			}else{
-				Msg re2 = Msg.fail().add("fail","数据库中已存在次供货商信息");
+				Msg re2 = Msg.fail().add("fail","锟斤拷锟捷匡拷锟斤拷锟窖达拷锟节次癸拷锟斤拷锟斤拷锟斤拷息");
 				return re2;
 			}
 		}
-		/**
-		 * 返回所有ghs
-		 * @return
-		 */
+
 		public List<Gonghuoshang> GetAllGhsService(){
 			return ghs.GeyAllGHS();
 		}
-		/**
-		 * 删除it和records中的记录
-		 * @param it
-		 */
+
 		public void DelGhsAndRecordsService(String it){
 			ghs.DelGHS(it);
 			jin.DelJinhuoRecords(it);
@@ -92,10 +82,7 @@ public class JinhuoService {
 				String pihao, String amount) {
 			jin.DelJinhuo(drugname, changshang, pihao, amount);
 		}
-		/**
-		 * 审核入库
-		 * @return
-		 */
+
 		public boolean CpshService() {
 			List<Jinhuo> CheckJh = jin.GetAllJinhuo();
 			if(CheckJh.isEmpty()){
@@ -138,7 +125,6 @@ public class JinhuoService {
 			if(qd==""||qd==null){
 				PageHelper.startPage(pn, 8);
 				List<Jinhuo> re = jin.GAJRecords();
-				//使用pageinfo包装查询后的结果，只需要将pageinfo交给页面就行了PageInfo(ee,5)  5是连续显示多少页	
 				PageInfo<Jinhuo> page_1 = new PageInfo<Jinhuo>(re,5);
 				return page_1;
 			}else{

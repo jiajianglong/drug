@@ -1,6 +1,5 @@
 package com.bean;
 
-//效期提示
 public class Datetips {
 	private String drugname;
 	private String changshang;
@@ -14,7 +13,7 @@ public class Datetips {
 	private String unit;
 	private String guige;
 	private String tip;
-	private String flag;   //颜色判断r|y
+	private String flag;
 	public Datetips(){}
 	public Datetips(String drugname, String changshang, String beginprice,
 			String price, String date, String pihao, String beizhu,

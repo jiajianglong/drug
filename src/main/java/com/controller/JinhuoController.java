@@ -32,7 +32,7 @@ public class JinhuoController {
 			return "tostore/tostore";
 	}
 	
-	@RequestMapping("/jhrecords")  //jhrecords查看进货记录
+	@RequestMapping("/jhrecords")  //jhrecords
 	public String to_jhrecords(@RequestParam(value="pn",defaultValue="1")Integer pn,
 			@RequestParam(value="querydrug",defaultValue="")String qd,Map<String,Object> map){
 			map.put("queryresult",JS.QueryJFYService(pn,qd));

@@ -25,11 +25,10 @@ import com.utils.Boolean_tiaoxingma;
 public class DruginfoService {
 	@Autowired
 	DrugMapper drug;
-	public PageInfo<Drug> QueryDrugService(Integer pn,String qd){  //查询drug信息
+	public PageInfo<Drug> QueryDrugService(Integer pn,String qd){
 		if(qd==""||qd==null){
 			PageHelper.startPage(pn, 8);
 			List<Drug> re = drug.GetAllDrug();
-			//使用pageinfo包装查询后的结果，只需要将pageinfo交给页面就行了PageInfo(ee,5)  5是连续显示多少页	
 			PageInfo<Drug> page_1 = new PageInfo<Drug>(re,5);
 			return page_1;
 		}else{
@@ -77,11 +76,7 @@ public class DruginfoService {
 	public void DeleteService(String drugname, String changshang) {
 		drug.DeleteDrug(drugname, changshang);
 	}
-	/**
-	 * 用于查询基础信息
-	 * @param qd(查询字段)
-	 * @return
-	 */
+
 	public List<Drug> QueryDrugService(String qd) {
 		if(qd==""||qd==null){
 			List<Drug> re = drug.GetAllDrug();
