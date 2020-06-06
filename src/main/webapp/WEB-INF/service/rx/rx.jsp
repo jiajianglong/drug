@@ -138,7 +138,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</tr>
 							<tr>
 								<td>就医日期:</td>
-								<td colspan="2"><input type="text" class="form-control input-sm picker" id="input-htime" name="htime" value="" readonly></td>
+								<td colspan="2"><input type="text" class="form-control input-sm picker" id="input-htime" name="htime" value=""></td>
 								<td>医嘱内容:</td>
 								<td colspan="2"><input type="text" class="form-control" id="input-yz" name="yz" placeholder="" value=""></td>
 							</tr>

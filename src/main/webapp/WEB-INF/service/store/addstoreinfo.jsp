@@ -93,9 +93,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     					    <td>生产厂商:</td>
     						<td><input type="text" class="form-control" name="changshang" value="${drugstoreinfo.changshang }" readonly></td>
     						<td>生产日期:</td>
-    						<td><input type="text" class="form-control picker" id="inputbd" name="begindate" value="" readonly></td>
+    						<td><input type="text" class="form-control picker" id="inputbd" name="begindate" value=""></td>
     						<td>有效期至:</td>
-    						<td><input type="text" class="form-control picker" id="inputda" name="date" value="" readonly></td>
+    						<td><input type="text" class="form-control picker" id="inputda" name="date" value=""></td>
     					</tr>
     					<tr>
     						<td>备注:</td>

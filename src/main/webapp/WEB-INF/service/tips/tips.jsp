@@ -59,7 +59,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<form action="<%=basePath%>gettips" method="post">
 				<div class="input-group col-md-3" >
 					<input type="text" class="form-control picker"
-						name="selltime" id="querytime" value="" readonly /> 
+						name="selltime" id="querytime" value="" />
 					<span class="input-group-btn">
 						<button class="btn btn-info" type="submit">按日期查询销售记录</button>
 					</span>

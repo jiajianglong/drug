@@ -90,7 +90,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     					    <td>生产厂商:</td>
     						<td><input type="text" class="form-control" name="changshang" value="${druginfo.changshang }" readonly></td>
     						<td>生产日期:</td>
-    						<td><input type="text" class="form-control pickerbd" id="inputbd" name="begindate" value="" readonly></td>
+    						<td><input type="text" class="form-control pickerbd" id="inputbd" name="begindate" value=""></td>
     						<td>销售价格:</td>
     						<td><input type="number" step="0.0001" id="inputpri" class="form-control" name="price" value=""></td>
     					</tr>
@@ -98,7 +98,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     						<td>备注:</td>
     						<td><input type="text" class="form-control" name="beizhu" value="${druginfo.beizhu }" readonly></td>
     						<td>有效期至:</td>
-    						<td><input type="text" class="form-control pickerda" id="inputda" name="date" value="" readonly></td>
+    						<td><input type="text" class="form-control pickerda" id="inputda" name="date" value=""></td>
     						<td>进价:</td>
     						<td><input type="number" step="0.0001" id="inputbp" class="form-control" name="beginprice" value=""></td>
     					</tr>
@@ -114,7 +114,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     						<td>条形码:</td>
     						<td><input type="text" class="form-control" name="tiaoxingma" value="${druginfo.tiaoxingma }" readonly></td>
     						<td>进货时间:</td>
-    						<td><input type="text" class="form-control picker" id="inputjht" name="jinhuo_time" value="" readonly></td>
+    						<td><input type="text" class="form-control picker" id="inputjht" name="jinhuo_time" value=""></td>
     						<td>金额:</td>
     						<td><input type="number" step="0.0001" id="inputsum" class="form-control" name="sum" value=""></td>
     					</tr>

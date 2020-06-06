@@ -215,11 +215,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>
 						<div class="form-group">
 							<label for="inputbd" class="control-label">生产日期:</label><span class="forclean" style="color:red" id="span_bd"></span>
-							<input type="text" class="form-control input-sm picker" id="inputbd" name="begindate" value="" readonly>
+							<input type="text" class="form-control input-sm picker" id="inputbd" name="begindate" value="">
 						</div>
 						<div class="form-group">
 							<label for="inputda" class="control-label">有效期至:</label><span class="forclean" style="color:red" id="span_da"></span>
-							<input type="text" class="form-control input-sm picker" id="inputda" name="date" value="" readonly>
+							<input type="text" class="form-control input-sm picker" id="inputda" name="date" value="">
 						</div>
 						<div class="form-group">
 							<label for="lateph" class="control-label">原批号:</label>
